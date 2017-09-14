@@ -1,4 +1,4 @@
-# removingpebblegame
+# Nim-Game
 Onii-chan and Imouto, play the following game: 
 
 They place n pebbles on the table. 
