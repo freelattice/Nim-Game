@@ -5,7 +5,7 @@ def f(n, m, M):
     if M[n][m] is not None:
         return M[n][m]
     if m <= 2**(n - 1):
-        M[n][m] = bool(n % 2)
+        M[n][1:2**(n - 1) + 1] = [bool(n % 2)]*(2**(n - 1))
         return bool(n % 2)
     if n % 2:
         for x in range(1, 2**(n - 1) + 1):
