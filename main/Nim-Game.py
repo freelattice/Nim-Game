@@ -7,15 +7,18 @@ def f(n, m, M):
     if m <= 2**(n - 1):
         M[n][1:2**(n - 1) + 1] = [bool(n % 2)]*(2**(n - 1))
         return bool(n % 2)
+    if m <= 2**n +1:
+        M[n][m] = not bool(n % 2)
+        return not bool(n % 2)
     if n % 2:
-        for x in range(1, 2**(n - 1) + 1):
+        for x in range(2 ** (n - 1), 0, -1):
             if f(n+1, m-x, M):
                 M[n][m] = True
                 return True
         M[n][m] = False
         return False
     else:
-        for x in range(1, 2**(n - 1) + 1):
+        for x in range(2 ** (n - 1), 0, -1):
             if not f(n + 1, m - x, M):
                 M[n][m] = False
                 return False
